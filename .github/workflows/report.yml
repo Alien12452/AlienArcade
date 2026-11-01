@@ -1,0 +1,25 @@
+name: Progress report
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate objdiff report
+        run: python tools/report.py -o build/report.json
+
+      - name: Upload progress report
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1.0_report
+          path: build/report.json

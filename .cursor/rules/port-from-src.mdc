@@ -1,0 +1,24 @@
+---
+description: Keep the SDL port honest to the matching decomp in src/
+globs: port/**/*
+alwaysApply: false
+---
+
+# Port vs matching source
+
+`src/` is the source of truth for game behavior (byte-matching Borland build).
+`port/` is a separate SDL3 rewrite. Do not change matching shape in `src/` to
+suit the port.
+
+## When changing port code
+
+1. Find the corresponding logic in `src/` (same module name when possible:
+   `port/src/between.c` ↔ `src/between.c`).
+2. Prefer a close transcription of that logic over re-deriving behavior.
+3. Mark clear correspondences with a one-line comment:
+   `/* orig: Name (SSSS:OOOO) */`
+   using the address from the matching `// FUNCTION:` line. One comment can
+   cover a cluster of helpers that implement one original function.
+4. Do not put matching `// FUNCTION: AARCADE …` annotations in `port/`; those
+   are for `necmp.py` / the Borland tree only.
+5. Port-only helpers (SDL layout, textures) need no orig line.

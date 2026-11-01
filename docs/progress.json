@@ -1,0 +1,6411 @@
+{
+  "linked": true,
+  "functions": [
+    {
+      "addr": "0001:0000",
+      "name": "Main",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 187,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:00BB",
+      "name": "__cleanup",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 18,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:00CD",
+      "name": "__checknull",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 1,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:00CE",
+      "name": "__restorezero",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 1,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:00CF",
+      "name": "__terminate",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 30,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:00ED",
+      "name": "__GetDGROUP",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 3,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:00F0",
+      "name": "Initialize",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 68,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0134",
+      "name": "Cleanup",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 65,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0176",
+      "name": "MmFail",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 14,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0184",
+      "name": "MmBind",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 74,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01CE",
+      "name": "MmLoad",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01D3",
+      "name": "MMSYSTEMGETVERSION",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01D8",
+      "name": "WAVEOUTGETNUMDEVS",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01DD",
+      "name": "WAVEOUTGETDEVCAPS",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01E2",
+      "name": "WAVEOUTGETERRORTEXT",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01E7",
+      "name": "WAVEOUTOPEN",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01EC",
+      "name": "WAVEOUTCLOSE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01F1",
+      "name": "WAVEOUTPREPAREHEADER",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01F6",
+      "name": "WAVEOUTUNPREPAREHEADER",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:01FB",
+      "name": "WAVEOUTWRITE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0200",
+      "name": "WAVEOUTPAUSE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0205",
+      "name": "WAVEOUTRESTART",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:020A",
+      "name": "WAVEOUTRESET",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:020F",
+      "name": "WAVEOUTGETPOSITION",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0214",
+      "name": "WAVEOUTGETPITCH",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0219",
+      "name": "WAVEOUTSETPITCH",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:021E",
+      "name": "WAVEOUTGETVOLUME",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0223",
+      "name": "WAVEOUTSETVOLUME",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0228",
+      "name": "WAVEOUTGETPLAYBACKRATE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:022D",
+      "name": "WAVEOUTSETPLAYBACKRATE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0232",
+      "name": "WAVEOUTBREAKLOOP",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0237",
+      "name": "WAVEOUTGETID",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:023C",
+      "name": "MMIOOPEN",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0241",
+      "name": "MMIOCLOSE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0246",
+      "name": "MMIOREAD",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:024B",
+      "name": "MMIOSEEK",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0250",
+      "name": "MMIOWRITE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0255",
+      "name": "MMIOGETINFO",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:025A",
+      "name": "MMIOSETINFO",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:025F",
+      "name": "MMIOSETBUFFER",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0264",
+      "name": "MMIOFLUSH",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0269",
+      "name": "MMIOADVANCE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:026E",
+      "name": "MMIOSTRINGTOFOURCC",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0273",
+      "name": "MMIOINSTALLIOPROC",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0278",
+      "name": "MMIOSENDMESSAGE",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:027D",
+      "name": "MMIODESCEND",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0282",
+      "name": "MMIOASCEND",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:0287",
+      "name": "MMIOCREATECHUNK",
+      "file": "src/mmstub.asm",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0001:028C",
+      "name": "_atexit",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 47,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:02BC",
+      "name": "exit_dummy",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 1,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:02BD",
+      "name": "exit_common",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 87,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0314",
+      "name": "_exit",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 17,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0325",
+      "name": "__exit",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 20,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0339",
+      "name": "__cexit",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 14,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0347",
+      "name": "__c_exit",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 12,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0354",
+      "name": "LXMUL@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:036B",
+      "name": "SCOPY@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0388",
+      "name": "_getdate",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 21,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:039D",
+      "name": "_gettime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 21,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03B2",
+      "name": "N_LDIV@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 3,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03B5",
+      "name": "LDIV@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 4,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03B9",
+      "name": "N_LUDIV@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 3,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03BC",
+      "name": "LUDIV@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03C1",
+      "name": "N_LMOD@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 3,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03C4",
+      "name": "LMOD@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 5,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03C9",
+      "name": "N_LUMOD@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 3,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:03CC",
+      "name": "LUMOD@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 148,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0460",
+      "name": "N_LXLSH@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 3,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0463",
+      "name": "LXLSH@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 30,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0482",
+      "name": "__IOERROR",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 57,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:04BB",
+      "name": "__DOSERROR",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 18,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:04CE",
+      "name": "_isatty",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 19,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:04E2",
+      "name": "__LONGTOA",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 125,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:055F",
+      "name": "__UTOA",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:057C",
+      "name": "_lseek",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:05A7",
+      "name": "N_LXMUL@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:05BE",
+      "name": "N_SCOPY@",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:05DA",
+      "name": "_srand",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 19,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:05ED",
+      "name": "_rand",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 38,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0614",
+      "name": "scantol_digit",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:063F",
+      "name": "__scantol",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 383,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:07BE",
+      "name": "_setdate",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 21,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:07D3",
+      "name": "_settime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 21,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:07E8",
+      "name": "__setupio",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 165,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:088E",
+      "name": "_stime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:08C8",
+      "name": "_time",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 79,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0918",
+      "name": "_toupper",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 70,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:095E",
+      "name": "__VPRINTER",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 39,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0985",
+      "name": "vprinter_putc",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 9,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:098E",
+      "name": "vprinter_flush",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 1155,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0E12",
+      "name": "_atol",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 114,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0E84",
+      "name": "_atoi",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:0E94",
+      "name": "comtime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 503,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:108B",
+      "name": "asctime_format",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 63,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:10CA",
+      "name": "_gmtime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 25,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:10E3",
+      "name": "_localtime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 54,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1119",
+      "name": "_asctime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 38,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:113F",
+      "name": "_ctime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 21,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1154",
+      "name": "totalsec",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 400,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:12E4",
+      "name": "_mktime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 88,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:133C",
+      "name": "_strftime",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 964,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1700",
+      "name": "_fflush",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 131,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1784",
+      "name": "_flushall",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 60,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:17C0",
+      "name": "stream_position",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 93,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:181D",
+      "name": "_fseek",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 106,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1887",
+      "name": "_ftell",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 201,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1950",
+      "name": "_getenv",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 97,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:19B2",
+      "name": "_memcpy",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 33,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:19D4",
+      "name": "_setmem",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 40,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:19FC",
+      "name": "_memset",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1A1A",
+      "name": "_movedata",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 36,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1A3E",
+      "name": "_setvbuf",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 218,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1B18",
+      "name": "sprintf_put",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 40,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1B40",
+      "name": "_sprintf",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 31,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1B5F",
+      "name": "_vsprintf",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 30,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1B7E",
+      "name": "_strcat",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 59,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1BBA",
+      "name": "_strcpy",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 36,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1BDE",
+      "name": "_stricmp",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 66,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1C20",
+      "name": "_strlen",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1C3C",
+      "name": "_strncpy",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 46,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1C6A",
+      "name": "_strrchr",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 49,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1C9C",
+      "name": "strtol_get",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 30,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1CBA",
+      "name": "strtol_unget",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 12,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1CC6",
+      "name": "_strtol",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 215,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1D9E",
+      "name": "_dostounix",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 283,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:1EB9",
+      "name": "_unixtodos",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 466,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:208C",
+      "name": "_tzset",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 385,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:220D",
+      "name": "__ISDST",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 223,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:22EC",
+      "name": "___write",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 272,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:23FC",
+      "name": "__write",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 99,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2460",
+      "name": "__xfflush",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 35,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2484",
+      "name": "__fmemcpy",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 38,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:24AA",
+      "name": "_abort",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 11,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:24B6",
+      "name": "__errorBox",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:24F0",
+      "name": "__errorExitBox",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2508",
+      "name": "_malloc",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 18,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:251A",
+      "name": "_realloc",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:254D",
+      "name": "_calloc",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2564",
+      "name": "_free",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 20,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2578",
+      "name": "__REALCVT",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 4,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:257C",
+      "name": "argv0_init",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 54,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:25B2",
+      "name": "env_size_init",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 79,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2602",
+      "name": "env_init",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 153,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:269C",
+      "name": "signal_index",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 35,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:26BF",
+      "name": "_signal",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 87,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2716",
+      "name": "__FpeDefault",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 125,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2793",
+      "name": "fpe_index",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 131,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2816",
+      "name": "_raise",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 130,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0001:2898",
+      "name": "__FpeHandler",
+      "file": "src/rtl.h",
+      "segment": 1,
+      "orig_size": 87,
+      "score": 1.0,
+      "status": "exact",
+      "library": true
+    },
+    {
+      "addr": "0002:0000",
+      "name": "WinMain",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 291,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0002:0123",
+      "name": "ActivatePrevInstance",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 86,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0002:0179",
+      "name": "MainWndProc",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 822,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0002:04AF",
+      "name": "OnActivateApp",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 124,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0002:052B",
+      "name": "DeleteGdiObjects",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 90,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0002:0585",
+      "name": "GetGamePalette",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 30,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0002:05A3",
+      "name": "PostMainCommand",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0002:05BF",
+      "name": "ShowMessage",
+      "file": "src/main.c",
+      "segment": 2,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:0000",
+      "name": "ParseCmdLine",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:003A",
+      "name": "ParseOption",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 159,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:00D9",
+      "name": "InitApplication",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 119,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:0150",
+      "name": "CreateMainWindow",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 134,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:01D6",
+      "name": "InitGame",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 375,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:034D",
+      "name": "CreateGamePalette",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 780,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:0659",
+      "name": "MakeBrush",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 22,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0003:066F",
+      "name": "InitControls",
+      "file": "src/init.c",
+      "segment": 3,
+      "orig_size": 664,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0004:0000",
+      "name": "EmptyProc",
+      "file": "src/scene.c",
+      "segment": 4,
+      "orig_size": 7,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0004:0007",
+      "name": "InitScene",
+      "file": "src/scene.c",
+      "segment": 4,
+      "orig_size": 210,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0004:00D9",
+      "name": "TickScene",
+      "file": "src/scene.c",
+      "segment": 4,
+      "orig_size": 1100,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0004:0525",
+      "name": "FreeScene",
+      "file": "src/scene.c",
+      "segment": 4,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0004:055F",
+      "name": "PaintScene",
+      "file": "src/scene.c",
+      "segment": 4,
+      "orig_size": 65,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0004:05A0",
+      "name": "RectsOverlap",
+      "file": "src/scene.c",
+      "segment": 4,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0004:05DA",
+      "name": "UnionRects",
+      "file": "src/scene.c",
+      "segment": 4,
+      "orig_size": 85,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:0000",
+      "name": "RunModalDialog",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 153,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:0099",
+      "name": "EndModalDialog",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 20,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:00AD",
+      "name": "ModalDlgProc",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 382,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:022B",
+      "name": "MoveWindowTo",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 98,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:028D",
+      "name": "FlashDlgItem",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 91,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:02E8",
+      "name": "StartAnimTimer",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 117,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:035D",
+      "name": "StopAnimTimer",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:037D",
+      "name": "IsTimerSibling",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 110,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:03EB",
+      "name": "SaveAnimTimer",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:040B",
+      "name": "RestoreAnimTimer",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:0427",
+      "name": "TimerWndProc",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 55,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:045E",
+      "name": "InstallMsgHook",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 54,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:0494",
+      "name": "RemoveMsgHook",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 20,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0005:04A8",
+      "name": "MsgHookProc",
+      "file": "src/dialog.c",
+      "segment": 5,
+      "orig_size": 233,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0006:0000",
+      "name": "NewSprite",
+      "file": "src/sprite.c",
+      "segment": 6,
+      "orig_size": 46,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0006:002E",
+      "name": "InsertSprite",
+      "file": "src/sprite.c",
+      "segment": 6,
+      "orig_size": 84,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0006:0082",
+      "name": "AddSprite",
+      "file": "src/sprite.c",
+      "segment": 6,
+      "orig_size": 67,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0006:00C5",
+      "name": "UnlinkSprite",
+      "file": "src/sprite.c",
+      "segment": 6,
+      "orig_size": 83,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0006:0118",
+      "name": "FreeSprite",
+      "file": "src/sprite.c",
+      "segment": 6,
+      "orig_size": 44,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0006:0144",
+      "name": "UpdateSpriteRect",
+      "file": "src/sprite.c",
+      "segment": 6,
+      "orig_size": 60,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0006:0180",
+      "name": "FreeImages",
+      "file": "src/sprite.c",
+      "segment": 6,
+      "orig_size": 37,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:0000",
+      "name": "AllocScoreList",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 158,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:009E",
+      "name": "SetScoreDay",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 66,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:00E0",
+      "name": "ResetScoreList",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 60,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:011C",
+      "name": "GetYDay",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 45,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:0149",
+      "name": "CheckScoreDay",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 78,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:0197",
+      "name": "ScoreQualifies",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 135,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:021E",
+      "name": "InsertScore",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 285,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:033B",
+      "name": "GetScoreEntry",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 131,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0007:03BE",
+      "name": "GetScoreInfo",
+      "file": "src/slist.c",
+      "segment": 7,
+      "orig_size": 85,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0000",
+      "name": "AddSpriteImage",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 107,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:006B",
+      "name": "SetSpriteMove",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 80,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:00BB",
+      "name": "SetSpriteFrame",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 73,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0104",
+      "name": "BackView1",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:011C",
+      "name": "View1WndProc",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 128,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:019C",
+      "name": "OpenView1",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 459,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0367",
+      "name": "CloseView1",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 70,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:03AD",
+      "name": "BackView2",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:03C5",
+      "name": "View2WndProc",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 132,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0449",
+      "name": "OpenView2",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 458,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0613",
+      "name": "CloseView2",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 72,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:065B",
+      "name": "BackView3",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0673",
+      "name": "View3WndProc",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 132,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:06F7",
+      "name": "OpenView3",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 543,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0916",
+      "name": "CloseView3",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 72,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:095E",
+      "name": "BackView4",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0976",
+      "name": "View4WndProc",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 132,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:09FA",
+      "name": "OpenView4",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 550,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0C20",
+      "name": "CloseView4",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 72,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0C68",
+      "name": "BackView5",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0C80",
+      "name": "View5WndProc",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 132,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0D04",
+      "name": "OpenView5",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 533,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0F19",
+      "name": "CloseView5",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 72,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0F61",
+      "name": "BackView6",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0F79",
+      "name": "View6WndProc",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 116,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:0FED",
+      "name": "OpenView6",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 429,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:119A",
+      "name": "CloseView6",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 64,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:11DA",
+      "name": "LineWndProc",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 222,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:12B8",
+      "name": "AddHiddenSprite",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 102,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:131E",
+      "name": "BackLine",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:1336",
+      "name": "OpenLineView",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 235,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:1421",
+      "name": "CloseLineView",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 48,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:1451",
+      "name": "OpenViews",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:14BA",
+      "name": "TickViews",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 71,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0008:1501",
+      "name": "CloseViews",
+      "file": "src/view.c",
+      "segment": 8,
+      "orig_size": 68,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0009:0000",
+      "name": "CopyPStr",
+      "file": "src/pstr.c",
+      "segment": 9,
+      "orig_size": 40,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0009:0028",
+      "name": "PStrDiff",
+      "file": "src/pstr.c",
+      "segment": 9,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0009:005B",
+      "name": "SplicePStr",
+      "file": "src/pstr.c",
+      "segment": 9,
+      "orig_size": 293,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0009:0180",
+      "name": "InsertPStr",
+      "file": "src/pstr.c",
+      "segment": 9,
+      "orig_size": 31,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0000",
+      "name": "GAllocLock",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 111,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:006F",
+      "name": "GUnlockFree",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 97,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:00D0",
+      "name": "FindGlobal",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 52,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0104",
+      "name": "GFree",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:011C",
+      "name": "GLock",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:013C",
+      "name": "GUnlock",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0154",
+      "name": "LockRes",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0174",
+      "name": "UnlockRes",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:018C",
+      "name": "FreeRes",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:01A4",
+      "name": "MakeBitmapInfo",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 290,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:02C6",
+      "name": "CreateImageBitmap",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 203,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0391",
+      "name": "CreateImage",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:03FA",
+      "name": "FreeImage",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 37,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:041F",
+      "name": "FillImage",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 60,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:045B",
+      "name": "GetImageWidthBytes",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:048E",
+      "name": "SetImageBits",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 110,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:04FC",
+      "name": "MaskBlitImage",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 133,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0581",
+      "name": "CopyBlitImage",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 148,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0615",
+      "name": "BlitImage",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 139,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:06A0",
+      "name": "BlitImageToDC",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 107,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:070B",
+      "name": "OpenDataFile",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 144,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:079B",
+      "name": "SeekFile",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 47,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:07CA",
+      "name": "ReadFileHuge",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 214,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:08A0",
+      "name": "CloseFile",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 19,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:08B3",
+      "name": "FindLibrarySlot",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 41,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:08DC",
+      "name": "LoadDataLibrary",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 140,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0968",
+      "name": "FreeDataLibrary",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 53,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:099D",
+      "name": "LoadRes",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 61,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:09DA",
+      "name": "FindRes",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 90,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0A34",
+      "name": "CopyResToGlobal",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 137,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0ABD",
+      "name": "LoadStr",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 35,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0AE0",
+      "name": "CreateGameFont",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 173,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0B8D",
+      "name": "FillRectWhite",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 31,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0BAC",
+      "name": "FillRectBlack",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 52,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0BE0",
+      "name": "FrameRoundRect",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 82,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0C32",
+      "name": "InvertRoundRect",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 102,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0C98",
+      "name": "DrawTextInRect",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 136,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0D20",
+      "name": "TextOutPascal",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 49,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0D51",
+      "name": "GetTextExtentPascal",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 36,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0D75",
+      "name": "TermControls",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 148,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0E09",
+      "name": "SwampGasDlgClsProc",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0E34",
+      "name": "UserWndProc",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 276,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0F48",
+      "name": "SubclassAnimItem",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 49,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0F79",
+      "name": "UnsubclassAnimItem",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 25,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0F92",
+      "name": "SubclassUserItem",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0FC5",
+      "name": "UnsubclassUserItem",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 49,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:0FF6",
+      "name": "CreateUserWindow",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 143,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1085",
+      "name": "CreateAnimWindow",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 121,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:10FE",
+      "name": "DestroyAnimWindow",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 39,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1125",
+      "name": "TrackUserButton",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 245,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:121A",
+      "name": "GetWindowNumber",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 53,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:124F",
+      "name": "PicItemProc",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 214,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1325",
+      "name": "ParamTextProc",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 586,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:156F",
+      "name": "ParamText",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 165,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1614",
+      "name": "FindChar",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 63,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1653",
+      "name": "ExpandParamText",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 229,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1738",
+      "name": "CountIndStrings",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 56,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1770",
+      "name": "GetIndStr",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 64,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:17B0",
+      "name": "GetIndString",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 25,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:17C9",
+      "name": "PtoCstr",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 88,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1821",
+      "name": "CtoPstr",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 111,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1890",
+      "name": "NumToString",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:18BB",
+      "name": "StringToNum",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 57,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:18F4",
+      "name": "LoadPicture",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 94,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1952",
+      "name": "GetPictureRect",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 75,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:199D",
+      "name": "LoadPictImage",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 194,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1A5F",
+      "name": "DrawPicture",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 143,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1AEE",
+      "name": "FreePicture",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 59,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1B29",
+      "name": "FreeBitmap",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1B41",
+      "name": "LoadPPic",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 124,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1BBD",
+      "name": "FreePPic",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1BF7",
+      "name": "CacheAdd",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 9,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1C00",
+      "name": "CacheFind",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1C0D",
+      "name": "CacheRelease",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1C1A",
+      "name": "CacheIsCached",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1C27",
+      "name": "CacheFlush",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 7,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1C2E",
+      "name": "LoadLibBitmap",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 84,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1C82",
+      "name": "LoadPPct",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 52,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1CB6",
+      "name": "GetCaretTime",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1CCD",
+      "name": "Delay",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 96,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000A:1D2D",
+      "name": "Munger",
+      "file": "src/image.c",
+      "segment": 10,
+      "orig_size": 475,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000B:0000",
+      "name": "DrawScene",
+      "file": "src/draw.c",
+      "segment": 11,
+      "orig_size": 636,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000B:027C",
+      "name": "DrawRectsOverlap",
+      "file": "src/draw.c",
+      "segment": 11,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000B:02B6",
+      "name": "DrawSpriteProc",
+      "file": "src/draw.c",
+      "segment": 11,
+      "orig_size": 62,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000B:02F4",
+      "name": "DrawUnionRects",
+      "file": "src/draw.c",
+      "segment": 11,
+      "orig_size": 85,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000C:0000",
+      "name": "MoveSprite",
+      "file": "src/move.c",
+      "segment": 12,
+      "orig_size": 911,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000C:038F",
+      "name": "AllocSpriteMove",
+      "file": "src/move.c",
+      "segment": 12,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:0000",
+      "name": "PlayBorderProc",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 232,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:00E8",
+      "name": "RunPlayDialog",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:0105",
+      "name": "PlayDlgProc",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 681,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:03AE",
+      "name": "RunPlay",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 149,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:0443",
+      "name": "PlayWndProc",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 377,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:05BC",
+      "name": "NamePaintProc",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 112,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:062C",
+      "name": "RunNameDialog",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 25,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000D:0645",
+      "name": "NameDlgProc",
+      "file": "src/play.c",
+      "segment": 13,
+      "orig_size": 227,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000E:0000",
+      "name": "LayoutMain",
+      "file": "src/layout.c",
+      "segment": 14,
+      "orig_size": 532,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000E:0214",
+      "name": "PaintMain",
+      "file": "src/layout.c",
+      "segment": 14,
+      "orig_size": 129,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000F:0000",
+      "name": "LoadConfig",
+      "file": "src/inifile.c",
+      "segment": 15,
+      "orig_size": 183,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000F:00B7",
+      "name": "WriteConfig",
+      "file": "src/inifile.c",
+      "segment": 15,
+      "orig_size": 223,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000F:0196",
+      "name": "GetPatrolBackground",
+      "file": "src/inifile.c",
+      "segment": 15,
+      "orig_size": 33,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000F:01B7",
+      "name": "SaveConfig",
+      "file": "src/inifile.c",
+      "segment": 15,
+      "orig_size": 11,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000F:01C2",
+      "name": "FindDlls",
+      "file": "src/inifile.c",
+      "segment": 15,
+      "orig_size": 107,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "000F:022D",
+      "name": "DllPresent",
+      "file": "src/inifile.c",
+      "segment": 15,
+      "orig_size": 137,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:0000",
+      "name": "GetDlgItemHwnd",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 22,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:0016",
+      "name": "GetDlgItemPstr",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 37,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:003B",
+      "name": "SetDlgItemPstr",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 45,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:0068",
+      "name": "HideDlgItem",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 38,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:008E",
+      "name": "ShowDlgItem",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 38,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:00B4",
+      "name": "EnableDlgItem",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 39,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:00DB",
+      "name": "EnableByCode",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 47,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:010A",
+      "name": "CenterWindow",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 227,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:01ED",
+      "name": "CenterWindowUnused",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 22,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:0203",
+      "name": "CenterPopup",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 22,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:0219",
+      "name": "CenterChild",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 22,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:022F",
+      "name": "FrameItemProc",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 117,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:02A4",
+      "name": "SubclassFrameItem",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 26,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:02BE",
+      "name": "DrawItemPic",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 101,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:0323",
+      "name": "ConfirmChildCmd",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 115,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0010:0396",
+      "name": "ConfirmDlgProc",
+      "file": "src/util.c",
+      "segment": 16,
+      "orig_size": 56,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0011:0000",
+      "name": "RunResetScores",
+      "file": "src/clear.c",
+      "segment": 17,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0011:001C",
+      "name": "ResetScoresDlgProc",
+      "file": "src/clear.c",
+      "segment": 17,
+      "orig_size": 147,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0011:00AF",
+      "name": "RunEraseScores",
+      "file": "src/clear.c",
+      "segment": 17,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0011:00CB",
+      "name": "EraseScoresDlgProc",
+      "file": "src/clear.c",
+      "segment": 17,
+      "orig_size": 103,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0011:0132",
+      "name": "EraseScoreFile",
+      "file": "src/clear.c",
+      "segment": 17,
+      "orig_size": 90,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:0000",
+      "name": "AddNextSprite",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 102,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:0066",
+      "name": "BackNext",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:007E",
+      "name": "OpenNext",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 225,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:015F",
+      "name": "CloseNext",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 35,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:0182",
+      "name": "NextItemProc",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 283,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:029D",
+      "name": "NextBorderProc",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 187,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:0358",
+      "name": "SubclassNextBorder",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 26,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:0372",
+      "name": "RunNextDialog",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 30,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0012:0390",
+      "name": "NextDlgProc",
+      "file": "src/next.c",
+      "segment": 18,
+      "orig_size": 454,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0013:0000",
+      "name": "TextOutRight",
+      "file": "src/board.c",
+      "segment": 19,
+      "orig_size": 60,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0013:003C",
+      "name": "DrawRankRow",
+      "file": "src/board.c",
+      "segment": 19,
+      "orig_size": 278,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0013:0152",
+      "name": "DrawRankList",
+      "file": "src/board.c",
+      "segment": 19,
+      "orig_size": 98,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0013:01B4",
+      "name": "PaintNextScores",
+      "file": "src/board.c",
+      "segment": 19,
+      "orig_size": 489,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0013:039D",
+      "name": "DrawPictureAt",
+      "file": "src/board.c",
+      "segment": 19,
+      "orig_size": 87,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0014:0000",
+      "name": "OpenSession",
+      "file": "src/start.c",
+      "segment": 20,
+      "orig_size": 50,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0014:0032",
+      "name": "LoadSessionDll",
+      "file": "src/start.c",
+      "segment": 20,
+      "orig_size": 78,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0014:0080",
+      "name": "FreeSessionDll",
+      "file": "src/start.c",
+      "segment": 20,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0014:009D",
+      "name": "CloseSession",
+      "file": "src/start.c",
+      "segment": 20,
+      "orig_size": 120,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0015:0000",
+      "name": "ResultItemProc",
+      "file": "src/result.c",
+      "segment": 21,
+      "orig_size": 265,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0015:0109",
+      "name": "RunResultDialog",
+      "file": "src/result.c",
+      "segment": 21,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0015:013C",
+      "name": "ResultDlgProc",
+      "file": "src/result.c",
+      "segment": 21,
+      "orig_size": 246,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0016:0000",
+      "name": "ClearRanks",
+      "file": "src/score.c",
+      "segment": 22,
+      "orig_size": 37,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0016:0025",
+      "name": "LoadRoundScores",
+      "file": "src/score.c",
+      "segment": 22,
+      "orig_size": 129,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0016:00A6",
+      "name": "InsertRank",
+      "file": "src/score.c",
+      "segment": 22,
+      "orig_size": 76,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0016:00F2",
+      "name": "RecordScore",
+      "file": "src/score.c",
+      "segment": 22,
+      "orig_size": 225,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0016:01D3",
+      "name": "SaveRoundScores",
+      "file": "src/score.c",
+      "segment": 22,
+      "orig_size": 63,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0016:0212",
+      "name": "ReadScoreList",
+      "file": "src/score.c",
+      "segment": 22,
+      "orig_size": 398,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0016:03A0",
+      "name": "WriteScoreList",
+      "file": "src/score.c",
+      "segment": 22,
+      "orig_size": 401,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:0000",
+      "name": "InitSound",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 62,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:003E",
+      "name": "FinishWave",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 77,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:008B",
+      "name": "TickSound",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:00A2",
+      "name": "StopSfx",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 63,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:00E1",
+      "name": "CloseSfx",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 91,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:013C",
+      "name": "LoadSound",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 221,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:0219",
+      "name": "PreloadSounds",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 70,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:025F",
+      "name": "PlaySfx",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 22,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:0275",
+      "name": "PlaySoundEx",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 96,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:02D5",
+      "name": "SelectVolume",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 113,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:0346",
+      "name": "OpenWave",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 145,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:03D7",
+      "name": "SetWaveState",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 19,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:03EA",
+      "name": "IsWaveIdle",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 42,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:0414",
+      "name": "IsWaveDone",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 81,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:0465",
+      "name": "IsWaveBusy",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:047C",
+      "name": "StopWave",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 17,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:048D",
+      "name": "CloseWave",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 25,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:04A6",
+      "name": "FreeWave",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 184,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:055E",
+      "name": "StartWave",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 65,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:059F",
+      "name": "OpenWaveOut",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 413,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0017:073C",
+      "name": "ParseWave",
+      "file": "src/sound.c",
+      "segment": 23,
+      "orig_size": 477,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:0000",
+      "name": "SpeakerStub",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 7,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:0007",
+      "name": "EndSpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 14,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:0015",
+      "name": "PlaySpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 73,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:005E",
+      "name": "PlaySpkPair",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 71,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:00A5",
+      "name": "AdvanceSpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 158,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:0143",
+      "name": "SetSpeakerPitch",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 93,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:01A0",
+      "name": "SpeakerOff",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 26,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:01BA",
+      "name": "BeepSpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 37,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:01DF",
+      "name": "MuteSpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:01FB",
+      "name": "StartSpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 101,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:0260",
+      "name": "StopSpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:028B",
+      "name": "TickSpeaker",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 7,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:0292",
+      "name": "SpeakerTimerProc",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0018:02AF",
+      "name": "FindSpeakerScript",
+      "file": "src/speaker.c",
+      "segment": 24,
+      "orig_size": 52,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:0000",
+      "name": "LoadPPicImages",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 240,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:00F0",
+      "name": "GetPPicImage",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:0110",
+      "name": "GetPPctImage",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:0130",
+      "name": "LoadPicResImage",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 87,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:0187",
+      "name": "SeekPicRes",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 613,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:03EC",
+      "name": "FreePicRes",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:0426",
+      "name": "DecodePicImage",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 403,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:05B9",
+      "name": "DecodePixImage",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 617,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:0822",
+      "name": "UnpackColumn1",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 330,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:096C",
+      "name": "UnpackColumn4",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 432,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0019:0B1C",
+      "name": "UnpackColumn8",
+      "file": "src/ppic.c",
+      "segment": 25,
+      "orig_size": 454,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001A:0000",
+      "name": "SetRound",
+      "file": "src/round.c",
+      "segment": 26,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001A:000F",
+      "name": "OpenRound",
+      "file": "src/round.c",
+      "segment": 26,
+      "orig_size": 136,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001A:0098",
+      "name": "ClickRound",
+      "file": "src/round.c",
+      "segment": 26,
+      "orig_size": 77,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001A:00E6",
+      "name": "PaintRound",
+      "file": "src/round.c",
+      "segment": 26,
+      "orig_size": 83,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001A:0139",
+      "name": "TickRound",
+      "file": "src/round.c",
+      "segment": 26,
+      "orig_size": 109,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001A:01A6",
+      "name": "CloseRound",
+      "file": "src/round.c",
+      "segment": 26,
+      "orig_size": 78,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001A:01F4",
+      "name": "DecImageBottoms",
+      "file": "src/round.c",
+      "segment": 26,
+      "orig_size": 64,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0000",
+      "name": "AddRound3Sprite",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 81,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0051",
+      "name": "SetRound3Move",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 93,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:00AE",
+      "name": "SetRound3Frame",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0117",
+      "name": "ClearRound3Bolts",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0124",
+      "name": "MoveRound3Bolt",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0141",
+      "name": "TickRound3Bolt",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0159",
+      "name": "HitRound3Bolt",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 70,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:019F",
+      "name": "SpawnRound3Bolt",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 299,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:02CA",
+      "name": "MoveRound3Script",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 139,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0355",
+      "name": "MoveRound3Klutz",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 45,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0382",
+      "name": "TickRound3Klutz",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 42,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:03AC",
+      "name": "HitRound3Klutz",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 312,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:04E4",
+      "name": "SetupRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 150,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:057A",
+      "name": "SpawnRound3Klutz",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 594,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:07CC",
+      "name": "MoveRound3Player",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 121,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0845",
+      "name": "AddRound3Player",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 130,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:08C7",
+      "name": "ClearRound3Banana",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:08D4",
+      "name": "MoveRound3Banana",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:08F0",
+      "name": "TickRound3Banana",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0908",
+      "name": "HitRound3Banana",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 91,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0963",
+      "name": "ThrowRound3Banana",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 251,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0A5E",
+      "name": "ClearRound3RobotDogs",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0A6B",
+      "name": "MoveRound3RobotDog",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 28,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0A87",
+      "name": "TickRound3RobotDog",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0A9F",
+      "name": "HitRound3RobotDog",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 85,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0AF4",
+      "name": "SpawnRound3RobotDog",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 210,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0BC6",
+      "name": "MoveRound3Cloud",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0BE3",
+      "name": "TickRound3Cloud",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0BFB",
+      "name": "HitRound3Cloud",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0C2E",
+      "name": "SpawnRound3Cloud",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 326,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0D74",
+      "name": "LayRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 117,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0DE9",
+      "name": "ArmRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0E01",
+      "name": "BackRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0E19",
+      "name": "OpenRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 236,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0F05",
+      "name": "ClickRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 11,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:0F10",
+      "name": "TickRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 286,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:102E",
+      "name": "PaintRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001B:103D",
+      "name": "CloseRound3",
+      "file": "src/round3.c",
+      "segment": 27,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0000",
+      "name": "AddRound2Sprite",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 78,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:004E",
+      "name": "SetRound2Move",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 93,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:00AB",
+      "name": "SetRound2Frame",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 73,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:00F4",
+      "name": "ClearRound2Falls",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0101",
+      "name": "MoveRound2Fall",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:011E",
+      "name": "TickRound2Fall",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0136",
+      "name": "HitRound2Fall",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0169",
+      "name": "SpawnRound2Fall",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 329,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:02B2",
+      "name": "MoveRound2Nerdoid",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 168,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:035A",
+      "name": "TickRound2Nerdoid",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 62,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0398",
+      "name": "HitRound2Nerdoid",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 200,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0460",
+      "name": "SetupRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 303,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:058F",
+      "name": "SpawnRound2Nerdoid",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 432,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:073F",
+      "name": "ReleaseRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 75,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:078A",
+      "name": "MoveRound2Player",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 114,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:07FC",
+      "name": "AddRound2Player",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 112,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:086C",
+      "name": "ClearRound2Comic",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0879",
+      "name": "MoveRound2Comic",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 35,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:089C",
+      "name": "TickRound2Comic",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 26,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:08B6",
+      "name": "HitRound2Comic",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 51,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:08E9",
+      "name": "MakeRound2Comic",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 113,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:095A",
+      "name": "ThrowRound2Comic",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 91,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:09B5",
+      "name": "DropRound2Comic",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 59,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:09F0",
+      "name": "LayRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 214,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0AC6",
+      "name": "ArmRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0ADE",
+      "name": "BackRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0AF6",
+      "name": "OpenRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 167,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0B9D",
+      "name": "ClickRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 11,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0BA8",
+      "name": "TickRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 172,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0C54",
+      "name": "PaintRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001C:0C63",
+      "name": "CloseRound2",
+      "file": "src/round2.c",
+      "segment": 28,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0000",
+      "name": "PadNumString",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 90,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:005A",
+      "name": "StatusTextOut",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 176,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:010A",
+      "name": "DrawPlayAmmo",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 58,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0144",
+      "name": "AddPlayAmmo",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 59,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:017F",
+      "name": "DrawR5Parts",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 212,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0253",
+      "name": "DrawR5Droids",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 59,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:028E",
+      "name": "AddR5Count",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 89,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:02E7",
+      "name": "DrawPlayWave",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 71,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:032E",
+      "name": "NextPlayWave",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 52,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0362",
+      "name": "DrawTimeLeft",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 74,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:03AC",
+      "name": "TickTimeLeft",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 121,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0425",
+      "name": "PauseTimeLeft",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 11,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0430",
+      "name": "ResumeTimeLeft",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 22,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0446",
+      "name": "SetTimeLeft",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 49,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0477",
+      "name": "DrawPlayScore",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 61,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:04B4",
+      "name": "AddPlayScore",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 155,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:054F",
+      "name": "DrawStatusBar",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 488,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001D:0737",
+      "name": "FormatTime",
+      "file": "src/status.c",
+      "segment": 29,
+      "orig_size": 181,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:0000",
+      "name": "AddRound1Sprite",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 107,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:006B",
+      "name": "SetRound1Move",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 80,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:00BB",
+      "name": "SetRound1Frame",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 73,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:0104",
+      "name": "MoveRound1Player",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 103,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:016B",
+      "name": "AddRound1Player",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 61,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:01A8",
+      "name": "ClearRound1Pies",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 13,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:01B5",
+      "name": "MoveRound1Pie",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 45,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:01E2",
+      "name": "TickRound1Pie",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:01FA",
+      "name": "HitRound1Pie",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 50,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:022C",
+      "name": "ThrowRound1Pie",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 149,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:02C1",
+      "name": "SetupRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 227,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:03A4",
+      "name": "MoveRound1Snake",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 52,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:03D8",
+      "name": "TickRound1Snake",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 33,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:03F9",
+      "name": "HookRound1Happy",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:0462",
+      "name": "HitRound1Snake",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 220,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:053E",
+      "name": "SpawnRound1Snake",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 309,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:0673",
+      "name": "BackRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:068B",
+      "name": "ArmRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:06A3",
+      "name": "OpenRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 151,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:073A",
+      "name": "ClickRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 11,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:0745",
+      "name": "TickRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 127,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:07C4",
+      "name": "PaintRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001E:07D3",
+      "name": "CloseRound1",
+      "file": "src/round1.c",
+      "segment": 30,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0000",
+      "name": "ClearRound5Marks",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:001B",
+      "name": "AllocRound5Mark",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:003B",
+      "name": "HookRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 269,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0149",
+      "name": "AddRound5Sprite",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 117,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:01BE",
+      "name": "SetRound5Move",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0227",
+      "name": "SetRound5Frame",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0290",
+      "name": "MoveRound5Player",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 134,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0316",
+      "name": "AddRound5Player",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 95,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0375",
+      "name": "MoveRound5Part",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 215,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:044C",
+      "name": "MovedRound5Part",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 1872,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0B9C",
+      "name": "DropRound5Part",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 44,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0BC8",
+      "name": "PickRound5Color",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 129,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0C49",
+      "name": "SpawnRound5Part",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 369,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0DBA",
+      "name": "LayRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 248,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0EB2",
+      "name": "SetupRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 185,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0F6B",
+      "name": "BackRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:0F83",
+      "name": "OpenRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 240,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:1073",
+      "name": "ClickRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 29,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:1090",
+      "name": "TickRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 321,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:11D1",
+      "name": "PaintRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "001F:11E0",
+      "name": "CloseRound5",
+      "file": "src/round5.c",
+      "segment": 31,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0000",
+      "name": "SetupRound4Step",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 95,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:005F",
+      "name": "AddRound4Sprite",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 117,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:00D4",
+      "name": "InsertRound4Sprite",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 120,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:014C",
+      "name": "SetRound4Move",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:01B5",
+      "name": "SetRound4Frame",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:021E",
+      "name": "ClearRound4Marks",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0239",
+      "name": "AllocRound4Mark",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0259",
+      "name": "MoveRound4Script",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 184,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0311",
+      "name": "MoveRound4Ball",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 333,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:045E",
+      "name": "HitTestRound4Ball",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 214,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0534",
+      "name": "MovedRound4Ball",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 50,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0566",
+      "name": "BurstRound4Ball",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 183,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:061D",
+      "name": "AddRound4Ball",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 131,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:06A0",
+      "name": "MoveRound4Bungee",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 174,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:074E",
+      "name": "DrawRound4Bungee",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:07B7",
+      "name": "AddRound4Bungee",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 73,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0800",
+      "name": "LayRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:082B",
+      "name": "AllocRound4Pool",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 72,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0873",
+      "name": "FindRound4Slot",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:089E",
+      "name": "FreeRound4Slot",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 46,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:08CC",
+      "name": "FreeRound4Pool",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:08E3",
+      "name": "MovedRound4Fungus",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:08FE",
+      "name": "TickRound4Fungus",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 36,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0922",
+      "name": "SpawnRound4Fungus",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 648,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0BAA",
+      "name": "SpawnRound4Wave",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 121,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0C23",
+      "name": "SetupRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 114,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0C95",
+      "name": "ArmRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0CAD",
+      "name": "EmptyRound4Back",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 9,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0CB6",
+      "name": "BackRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0CCE",
+      "name": "OpenRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 205,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0D9B",
+      "name": "OverlapRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 120,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0E13",
+      "name": "FungusRgnRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 124,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0E8F",
+      "name": "MakeFungusRgn",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 77,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0EDC",
+      "name": "MakeBallRgn",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 54,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:0F12",
+      "name": "BallRgnRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 252,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:100E",
+      "name": "ClickRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 93,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:106B",
+      "name": "TickRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 177,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:111C",
+      "name": "PaintRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0020:112B",
+      "name": "CloseRound4",
+      "file": "src/round4.c",
+      "segment": 32,
+      "orig_size": 31,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0000",
+      "name": "AddRound6Sprite",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 117,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0075",
+      "name": "InsertRound6Sprite",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 120,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:00ED",
+      "name": "SetRound6Move",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0156",
+      "name": "SetRound6Frame",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:01BF",
+      "name": "ClearRound6Marks",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:01DA",
+      "name": "AllocRound6Mark",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:01FA",
+      "name": "HookRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 140,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0286",
+      "name": "HitTestRound6MomE",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 89,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:02DF",
+      "name": "MoveRound6MomETron",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 75,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:032A",
+      "name": "AddRound6MomETron",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 97,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:038B",
+      "name": "InitRound6Slots",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 72,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:03D3",
+      "name": "FindRound6Slot",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 43,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:03FE",
+      "name": "FreeRound6Slot",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 46,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:042C",
+      "name": "FreeRound6Scripts",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 23,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0443",
+      "name": "BounceRound6Klutz",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 443,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:05FE",
+      "name": "MovedRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 40,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0626",
+      "name": "HitRound6Klutz",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 34,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0648",
+      "name": "HitRound6Peel",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 47,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0677",
+      "name": "SpawnRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 538,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0891",
+      "name": "LayRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 52,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:08C5",
+      "name": "SetupRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 153,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:095E",
+      "name": "ArmRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 16,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:096E",
+      "name": "ShrinkRound6Bottom",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 21,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0983",
+      "name": "BackRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 24,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:099B",
+      "name": "OpenRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 211,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0A6E",
+      "name": "ClickRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 7,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0A75",
+      "name": "TickRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 222,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0B53",
+      "name": "PaintRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 15,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0021:0B62",
+      "name": "CloseRound6",
+      "file": "src/round6.c",
+      "segment": 33,
+      "orig_size": 31,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0000",
+      "name": "AddStartSprite",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 103,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0067",
+      "name": "SetStartMove",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 105,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:00D0",
+      "name": "SetStartFrame",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 73,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0119",
+      "name": "SetupStartStep",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 95,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0178",
+      "name": "ClearStartMarks",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0193",
+      "name": "AllocStartMark",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:01B3",
+      "name": "HookStart",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 127,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0232",
+      "name": "AddStartBack",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:024D",
+      "name": "AddStartFigure",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 53,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0282",
+      "name": "AddStartMover",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 68,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:02C6",
+      "name": "AddStartTrio",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 195,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0389",
+      "name": "AddStartPair",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 131,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:040C",
+      "name": "AddStartWing",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 133,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0491",
+      "name": "AddStartFloater",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 67,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:04D4",
+      "name": "AddStartRow",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 499,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:06C7",
+      "name": "LayStartSprites",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 107,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0732",
+      "name": "BackStart",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 80,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0782",
+      "name": "StartWndProc",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 166,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:0828",
+      "name": "OpenStart",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 207,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:08F7",
+      "name": "CloseStart",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 40,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:091F",
+      "name": "RunStartDialog",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 27,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0022:093A",
+      "name": "StartDlgProc",
+      "file": "src/intro.c",
+      "segment": 34,
+      "orig_size": 208,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:0000",
+      "name": "CountTimeBonus",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 1068,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:042C",
+      "name": "RunRoundHelp",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 32,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:044C",
+      "name": "RoundHelpDlgProc",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 662,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:06E2",
+      "name": "RunStepDialog",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 97,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:0743",
+      "name": "StepDlgProc",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 65,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:0784",
+      "name": "WaveDlgProc",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 357,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:08E9",
+      "name": "RunRoundDone",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 25,
+      "score": 1.0,
+      "status": "exact"
+    },
+    {
+      "addr": "0023:0902",
+      "name": "RoundDoneDlgProc",
+      "file": "src/between.c",
+      "segment": 35,
+      "orig_size": 148,
+      "score": 1.0,
+      "status": "exact"
+    }
+  ],
+  "segments": {
+    "0001": 10479,
+    "0002": 1529,
+    "0003": 2311,
+    "0004": 1583,
+    "0005": 1425,
+    "0006": 421,
+    "0007": 1043,
+    "0008": 5445,
+    "0009": 415,
+    "000A": 7944,
+    "000B": 841,
+    "000C": 938,
+    "000D": 1832,
+    "000E": 661,
+    "000F": 694,
+    "0010": 974,
+    "0011": 396,
+    "0012": 1366,
+    "0013": 1012,
+    "0014": 277,
+    "0015": 562,
+    "0016": 1329,
+    "0017": 2329,
+    "0018": 739,
+    "0019": 3298,
+    "001A": 564,
+    "001B": 4184,
+    "001C": 3198,
+    "001D": 2028,
+    "001E": 2030,
+    "001F": 4603,
+    "0020": 4426,
+    "0021": 2945,
+    "0022": 2570,
+    "0023": 2454
+  },
+  "data": {
+    "total": 21318,
+    "modules": {
+      "ATEXIT": {
+        "total": 130,
+        "matched": 130
+      },
+      "BETWEEN": {
+        "total": 11,
+        "matched": 8
+      },
+      "C0W": {
+        "total": 90,
+        "matched": 74
+      },
+      "CLEAR": {
+        "total": 8,
+        "matched": 8
+      },
+      "CTIME": {
+        "total": 433,
+        "matched": 0
+      },
+      "CTYPE": {
+        "total": 257,
+        "matched": 257
+      },
+      "DIALOG": {
+        "total": 16,
+        "matched": 16
+      },
+      "EXIT": {
+        "total": 12,
+        "matched": 12
+      },
+      "FILES": {
+        "total": 320,
+        "matched": 320
+      },
+      "FILES2": {
+        "total": 42,
+        "matched": 42
+      },
+      "IMAGE": {
+        "total": 2704,
+        "matched": 2704
+      },
+      "INIFILE": {
+        "total": 1145,
+        "matched": 1145
+      },
+      "INIT": {
+        "total": 18,
+        "matched": 16
+      },
+      "INTRO": {
+        "total": 1332,
+        "matched": 1332
+      },
+      "IOERROR": {
+        "total": 91,
+        "matched": 91
+      },
+      "LAYOUT": {
+        "total": 150,
+        "matched": 150
+      },
+      "MAIN": {
+        "total": 24,
+        "matched": 24
+      },
+      "MMSTUB": {
+        "total": 455,
+        "matched": 455
+      },
+      "NEXT": {
+        "total": 152,
+        "matched": 152
+      },
+      "PLAY": {
+        "total": 224,
+        "matched": 224
+      },
+      "PPIC": {
+        "total": 8,
+        "matched": 8
+      },
+      "RAND": {
+        "total": 4,
+        "matched": 0
+      },
+      "ROUND1": {
+        "total": 650,
+        "matched": 650
+      },
+      "ROUND2": {
+        "total": 858,
+        "matched": 858
+      },
+      "ROUND3": {
+        "total": 1942,
+        "matched": 1942
+      },
+      "ROUND4": {
+        "total": 1846,
+        "matched": 1846
+      },
+      "ROUND5": {
+        "total": 2384,
+        "matched": 2384
+      },
+      "ROUND6": {
+        "total": 696,
+        "matched": 696
+      },
+      "SCORE": {
+        "total": 534,
+        "matched": 534
+      },
+      "SETARGV0": {
+        "total": 35,
+        "matched": 29
+      },
+      "SETENV": {
+        "total": 12,
+        "matched": 6
+      },
+      "SETENVRN": {
+        "total": 8,
+        "matched": 2
+      },
+      "SETUPIO": {
+        "total": 6,
+        "matched": 0
+      },
+      "SETVBUF": {
+        "total": 4,
+        "matched": 0
+      },
+      "SIGNAL": {
+        "total": 323,
+        "matched": 0
+      },
+      "SOUND": {
+        "total": 119,
+        "matched": 119
+      },
+      "SPEAKER": {
+        "total": 686,
+        "matched": 686
+      },
+      "START": {
+        "total": 4,
+        "matched": 4
+      },
+      "STATUS": {
+        "total": 16,
+        "matched": 8
+      },
+      "TIMECVT": {
+        "total": 12,
+        "matched": 0
+      },
+      "TZSET": {
+        "total": 61,
+        "matched": 47
+      },
+      "UTIL": {
+        "total": 134,
+        "matched": 134
+      },
+      "VIEW": {
+        "total": 3240,
+        "matched": 3240
+      },
+      "VPRINTER": {
+        "total": 103,
+        "matched": 0
+      },
+      "WCFNCPTR": {
+        "total": 8,
+        "matched": 8
+      }
+    }
+  }
+}

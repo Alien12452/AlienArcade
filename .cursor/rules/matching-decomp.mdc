@@ -1,0 +1,48 @@
+---
+description: Workflow and conventions for the Alien Arcade matching decompilation
+alwaysApply: true
+---
+
+# Matching decompilation workflow
+
+The goal is C source that Borland C++ 3.1 compiles to the same bytes as
+`orig/AARCADE.EXE` (16-bit Windows NE). Code that "does the same thing" is not
+enough; its shape must match.
+
+## Before writing or changing source
+
+- Read `docs/MATCHING.md`. It lists the confirmed codegen rules (declaration
+  order, block-scoped locals, function order and the `nop` before forward
+  calls, tail merging, jump shapes, `switch` forms, data layout).
+- Do not "tidy" odd-looking source (empty then-branches, `return 0; break;`,
+  redundant tests, bare `{ }` blocks). A comment next to it says why it is
+  needed; without one, check `necmp.py --diff` before changing it.
+
+## Loop
+
+1. Explore: `.venv/bin/python tools/nedump.py disasm SEG[:OFF]`,
+   `nedump.py xrefs SEG:OFF`, and for globals `nedump.py xrefs 24:ADDR --size N`.
+2. Write C in `src/`, one file per code segment, functions in original address
+   order, each with `// FUNCTION: AARCADE SSSS:OOOO`. Globals go in
+   `src/globals.c` with `// GLOBAL:`; runtime library code and data in
+   `src/rtl.h` with `// LIBRARY:` / `// GLOBAL: ... symbol`. Calls to code not
+   decompiled yet use placeholders `FUN_SSSS_OOOO` declared in `src/aarcade.h`.
+3. Build: `.venv/bin/python tools/build.py` (needs `required_permissions: ["all"]`
+   because it runs DOSBox-X from flatpak).
+4. Compare: `.venv/bin/python tools/necmp.py`, then `--diff NAME` for anything
+   that `differs`. Look at the first real difference; shifted labels are noise.
+5. Iterate on source shape until `exact` or `equivalent`.
+
+## Keep the knowledge
+
+- When a new codegen pattern is confirmed, add it to `docs/MATCHING.md` with a
+  short assembly example from this game.
+- When source has to look odd to match, add a one-line comment saying so.
+- After tooling changes, run `necmp.py --selftest` and
+  `.venv/bin/python -m pyflakes tools/*.py`.
+
+## Do not
+
+- Commit; the user commits.
+- Add the original files, Borland C++ or the Ghidra project to git
+  (`orig/`, `bin/`, `ghidra/` are ignored).

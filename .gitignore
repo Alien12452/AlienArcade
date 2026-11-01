@@ -1,0 +1,19 @@
+# Original game files are copyrighted; keep only their hashes in the repo.
+*.bin
+*.cue
+/bin/
+/orig/*
+!/orig/SHA256SUMS
+
+/build/
+/port/build/
+/ghidra/
+/.venv/
+/.vscode/
+.DS_Store
+__pycache__/
+*.OBJ
+*.obj
+*.MAP
+*.EXE
+*.RES

@@ -1,0 +1,20 @@
+Alien Arcade decompilation — third-party notices
+================================================
+
+Original game
+-------------
+
+Alien Arcade was written by Robert Cavey and Sean Callahan (1994, KidSoft and
+related parties as named in the original materials). The original executable,
+libraries, installer packs, pictures, sounds, dialogs, and other assets remain
+copyrighted. This repository does not redistribute those files. Only SHA-256
+hashes of the expanded binaries are committed (`orig/SHA256SUMS`). Do not
+publish `orig/`, installer contents under `bin/`, extracted resources under
+`build/res/`, or a resource-bound rebuild as free redistributables.
+
+Wine Win16 ordinal tables
+-------------------------
+
+The files under `tools/winapi16/` (`*.spec`) are derived from Wine’s Win16
+ordinal / API tables (https://www.winehq.org/). Those files are subject to the
+Wine license (LGPL). See the Wine project for the full license text.
