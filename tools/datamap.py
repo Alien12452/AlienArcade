@@ -126,4 +126,15 @@ def layout(map_path: Path, listings: Path, data_seg: int,
             items.append(Item(c.off, (starts[0] if starts else c.off + c.length) - c.off, None, c.stem, False))
         for o, nxt in zip(starts, starts[1:] + [c.off + c.length]):
             items.append(Item(o, nxt - o, sorted(by_off[o])[0], c.stem, False))
-    return items, warnings
+    # Word-alignment padding TLINK leaves between contributions: no module
+    # claims those bytes. Attribute them to a synthetic module so coverage
+    # can match them when the original and rebuilt bytes are identical.
+    items.sort(key=lambda it: it.off)
+    filled: list[Item] = []
+    pos = 0
+    for it in items:
+        if it.off > pos:
+            filled.append(Item(pos, it.off - pos, None, "(padding)", False))
+        filled.append(it)
+        pos = max(pos, it.off + it.size)
+    return filled, warnings

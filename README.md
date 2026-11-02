@@ -10,12 +10,11 @@ own NE (New Executable) toolchain in `tools/`.
 
 ## Status
 
-Matching for `AARCADE.EXE` is complete. `docs/progress.json` reports
-`linked: true` and all 675 annotated functions as `exact`.
-`tools/verify.py` confirms the rebuilt executable matches the original hash
-in `orig/SHA256SUMS`. The picture libraries `AACOLOR.DLL` and `AABW.DLL` are
-bit-identical too (`verify.py --dlls`). `METER.DLL` shipped with the game is
-out of scope (the game does not load it).
+Matching for `AARCADE.EXE`, `AACOLOR.DLL`, and `AABW.DLL` is complete.
+`docs/progress.json` reports `linked: true` and every annotated function as
+`exact`. `tools/verify.py` (with `--dlls`) confirms the rebuilt files match
+the hashes in `orig/SHA256SUMS`. `METER.DLL` shipped with the game is out of
+scope (the game does not load it).
 
 A Macintosh release of *Alien Arcade* also exists. Looking into that build
 (symbols, shared code with the Windows version, assets) is a future todo;
@@ -185,9 +184,15 @@ writes a committed inventory and `tools/report.py` turns it into the same
 JSON. GitHub Actions uploads it as the `v1.0_report` artifact on every push
 to the default branch.
 
-ByteMatch's "fully linked" measures follow the `linked` flag in the
-inventory: true only when `build/AARCADE.EXE` is identical to the original
-(`verify.py`).
+The inventory covers `AARCADE.EXE` and the picture DLLs `AACOLOR` / `AABW`
+(under a `modules` map). Word-alignment padding between modules is recorded
+in each module's `gaps` list and left out of the code total. String-literal
+pools and linker data padding count as matched data when their bytes are
+identical; runtime-library data is annotated with `// GLOBAL:` in
+`src/rtl.h` and `src/datalib/rtl.h`. ByteMatch's "fully linked" measures
+follow the top-level `linked` flag: true only when all three rebuilt files
+are identical to the originals (`verify.py --dlls`). AACOLOR's trailing
+CodeView overlay is debug data appended after the build and is not measured.
 
 ```sh
 .venv/bin/python tools/necmp.py              # refresh docs/progress.json

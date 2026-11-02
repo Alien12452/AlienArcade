@@ -6,6 +6,8 @@
  */
 #include <windows.h>
 
+// FUNCTION: AACOLOR 0001:017A LIBMAIN
+// FUNCTION: AABW 0001:018C LIBMAIN
 #pragma argsused
 int FAR PASCAL LibMain(HINSTANCE hInstance, WORD wDataSegment,
                        WORD wHeapSize, LPSTR lpszCmdLine)

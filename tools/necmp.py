@@ -260,6 +260,11 @@ class Comparator:
         return "\n".join(out)
 
 
+def _bytes_match(odata: bytes | bytearray, ndata: bytes | bytearray,
+                 o_off: int, n_off: int, size: int) -> bool:
+    return bytes(odata[o_off:o_off + size]) == bytes(ndata[n_off:n_off + size])
+
+
 def data_coverage(orig: NEFile, new: NEFile, items: list[Item], annotations: list[Annotation],
                   publics: dict[str, tuple[int, int]]) -> tuple[str, list[str], dict[str, dict[str, int]]]:
     """Summary line for the data segment and the items no GLOBAL annotation
@@ -268,7 +273,8 @@ def data_coverage(orig: NEFile, new: NEFile, items: list[Item], annotations: lis
 
     The third return value maps each module stem to total and matched byte
     counts. Matched means a GLOBAL annotation covers the item with identical
-    bytes; string-literal pools count toward the total only."""
+    bytes, or the item is a string-literal pool / alignment padding whose
+    original and rebuilt bytes match."""
     seg = orig.auto_data_seg
     odata, ndata = orig.segments[seg].data, new.segments[new.auto_data_seg].data
     total = orig.segments[seg].min_alloc
@@ -283,18 +289,32 @@ def data_coverage(orig: NEFile, new: NEFile, items: list[Item], annotations: lis
         it = at.get(off)
         if not it:
             notes.append(f"{a.addr()} {a.name}: no data item starts at rebuilt {off:04X}")
-        elif odata[a.off:a.off + it.size] != ndata[it.off:it.off + it.size]:
+        elif not _bytes_match(odata, ndata, a.off, it.off, it.size):
             notes.append(f"{a.addr()} {a.name}: bytes differ from the rebuilt {it.name or 'item'} at {off:04X}")
         else:
             covered.add(it.off)
-    named = sum(it.size for it in items if it.off in covered)
-    literals = sum(it.size for it in items if it.name == LITERALS and it.off not in covered)
+    # Literal pools and inter-contribution padding have no GLOBAL; match them
+    # when the rebuilt bytes at the same offset are identical.
+    for it in items:
+        if it.off in covered:
+            continue
+        if it.name == LITERALS or it.module == "(padding)":
+            if _bytes_match(odata, ndata, it.off, it.off, it.size):
+                covered.add(it.off)
+    named = sum(it.size for it in items if it.off in covered and it.name != LITERALS
+                and it.module != "(padding)")
+    lit_total = sum(it.size for it in items if it.name == LITERALS)
+    lit_matched = sum(it.size for it in items if it.name == LITERALS and it.off in covered)
+    pad_total = sum(it.size for it in items if it.module == "(padding)")
+    pad_matched = sum(it.size for it in items if it.module == "(padding)" and it.off in covered)
+    matched = sum(it.size for it in items if it.off in covered)
     same = sum(o == n for o, n in zip(bytes(odata).ljust(total, b"\0")[:total],
                                       bytes(ndata).ljust(total, b"\0")[:total]))
-    line = (f"{named}/{total} data bytes ({named / total:.2%}) in annotated globals, "
-            f"{literals} in string literals; {same}/{total} identical to the original")
+    line = (f"{matched}/{total} data bytes ({matched / total:.2%}) matched "
+            f"({named} annotated, {lit_matched}/{lit_total} string literals, "
+            f"{pad_matched}/{pad_total} padding); {same}/{total} identical to the original")
     for it in items:
-        if it.off not in covered and it.name != LITERALS:
+        if it.off not in covered and it.name != LITERALS and it.module != "(padding)":
             what = it.name or "(unnamed)"
             how = "" if it.sized else " (size from the next public)"
             notes.append(f"0024:{it.off:04X} {it.size:5}  {what:24} {it.module}{how}")
@@ -304,15 +324,83 @@ def data_coverage(orig: NEFile, new: NEFile, items: list[Item], annotations: lis
         slot["total"] += it.size
         if it.off in covered:
             slot["matched"] += it.size
+    # Trailing bytes past the last contribution (rare) still count toward the
+    # segment total; attribute them as padding when they match.
+    claimed = sum(it.size for it in items)
+    if claimed < total:
+        tail = total - claimed
+        slot = by_module.setdefault("(padding)", {"total": 0, "matched": 0})
+        slot["total"] += tail
+        if _bytes_match(odata, ndata, claimed, claimed, tail):
+            slot["matched"] += tail
     return line, notes, by_module
 
 
-def write_progress(path: Path, results: list[Result], annotations: list[Annotation],
-                   orig: NEFile, data_by_module: dict[str, dict[str, int]] | None,
-                   data_total: int | None, linked: bool) -> None:
-    """Committed inventory for tools/report.py. Deterministic JSON so the file
-    only changes when progress does. `linked` is true only when the rebuilt
-    EXE is identical to the original, every byte."""
+def code_gaps(results: list[Result], annotations: list[Annotation],
+              orig: NEFile) -> list[dict]:
+    """Uncovered stretches of each code segment. `zero` is true when every
+    byte is 0x00 (word-alignment padding the linker inserts between modules)."""
+    by_addr = {a.addr(): a for a in annotations}
+    by_seg: dict[int, list[tuple[int, int]]] = {}
+    for r in results:
+        a = by_addr[r.addr]
+        by_seg.setdefault(a.seg, []).append((a.off, r.orig_size))
+    gaps = []
+    for seg in sorted(s.index for s in orig.segments.values() if s.is_code):
+        length = orig.segments[seg].length
+        data = bytes(orig.segments[seg].data)
+        funcs = sorted(by_seg.get(seg, []), key=lambda t: t[0])
+        if not funcs:
+            chunk = data[:length]
+            gaps.append({
+                "addr": f"{seg:04X}:0000",
+                "size": length,
+                "zero": length == 0 or all(b == 0 for b in chunk),
+            })
+            continue
+        prev_end = 0
+        for off, size in funcs:
+            if off > prev_end:
+                chunk = data[prev_end:off]
+                gaps.append({
+                    "addr": f"{seg:04X}:{prev_end:04X}",
+                    "size": off - prev_end,
+                    "zero": all(b == 0 for b in chunk),
+                })
+            prev_end = off + size
+        if prev_end < length:
+            chunk = data[prev_end:length]
+            gaps.append({
+                "addr": f"{seg:04X}:{prev_end:04X}",
+                "size": length - prev_end,
+                "zero": all(b == 0 for b in chunk),
+            })
+    return gaps
+
+
+MODULES = (
+    ("AARCADE", "AARCADE.EXE", "AARCADE.MAP"),
+    ("AACOLOR", "AACOLOR.DLL", "AACOLOR.MAP"),
+    ("AABW", "AABW.DLL", "AABW.MAP"),
+)
+
+
+def module_paths(name: str, orig: Path | None = None, rebuilt: Path | None = None,
+                 map_path: Path | None = None) -> tuple[Path, Path, Path]:
+    """Default orig/rebuilt/map paths for a module name."""
+    binary = next(b for n, b, _ in MODULES if n == name)
+    map_name = next(m for n, _, m in MODULES if n == name)
+    return (
+        orig or ROOT / "orig" / binary,
+        rebuilt or ROOT / "build" / binary,
+        map_path or ROOT / "build" / map_name,
+    )
+
+
+def module_inventory(results: list[Result], annotations: list[Annotation],
+                     orig: NEFile, data_by_module: dict[str, dict[str, int]] | None,
+                     data_total: int | None, linked: bool) -> dict:
+    """One module's slice of the ByteMatch inventory."""
     by_addr = {a.addr(): a for a in annotations}
     functions = []
     for r in results:
@@ -342,23 +430,81 @@ def write_progress(path: Path, results: list[Result], annotations: list[Annotati
         }
         if data_total is None:
             data["total"] = sum(v["total"] for v in data_by_module.values())
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps({
+    return {
         "linked": linked,
         "functions": functions,
         "segments": segments,
+        "gaps": code_gaps(results, annotations, orig),
         "data": data,
+    }
+
+
+def write_progress(path: Path, modules: dict[str, dict]) -> None:
+    """Committed inventory for tools/report.py. Deterministic JSON so the file
+    only changes when progress does. Top-level `linked` is true only when every
+    module's rebuilt file is identical to the original."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({
+        "linked": all(m.get("linked") for m in modules.values()),
+        "modules": {name: modules[name] for name in sorted(modules)},
     }, indent=2) + "\n")
+
+
+def compare_one(module: str, orig_path: Path, rebuilt_path: Path, map_path: Path,
+                src: Path, selftest: bool = False
+                ) -> tuple[list[Result], list[Annotation], NEFile, dict | None, int | None, bool]:
+    """Compare one NE module. Returns results, code annotations, orig NE,
+    data_by_module, data_total, and whether the files are byte-identical."""
+    everything = parse_tree(src, module)
+    annotations = [a for a in everything if a.kind in ("FUNCTION", "STUB", "LIBRARY")]
+    orig = NEFile(str(orig_path))
+    if selftest:
+        new = orig
+        publics = {f"FUN_{s.index:04X}_{off:04X}": (s.index, off)
+                   for s in orig.segments.values() if s.is_code
+                   for off, _, _ in function_extents(orig, s.index)}
+        exports = {(e.seg, e.offset): orig.entry_names[o]
+                   for o, e in orig.entries.items() if o in orig.entry_names}
+        annotated = {(a.seg, a.off) for a in everything}
+        publics = {k: v for k, v in publics.items() if v not in annotated and v not in exports}
+        publics.update({name: addr for addr, name in exports.items()})
+        for a in everything:
+            publics[a.symbol or linker_candidates(a.name)[0]] = (a.seg, a.off)
+        linked = True
+    else:
+        if not rebuilt_path.exists() or not map_path.exists():
+            raise FileNotFoundError(f"missing {rebuilt_path} or {map_path}")
+        new = NEFile(str(rebuilt_path))
+        publics = parse_map(map_path)
+        place_library_statics(everything, publics)
+        linked = rebuilt_path.read_bytes() == orig_path.read_bytes()
+
+    cmp = Comparator(orig, new, publics, everything)
+    results = [cmp.compare(a) for a in sorted(annotations, key=lambda a: (a.seg, a.off))]
+    data_by_module: dict[str, dict[str, int]] | None = None
+    data_total: int | None = None
+    listings = map_path.parent / "LST"
+    if not selftest and listings.is_dir():
+        items, warnings = layout(map_path, listings, new.auto_data_seg, publics)
+        line, notes, data_by_module = data_coverage(orig, new, items, everything, publics)
+        data_total = orig.segments[orig.auto_data_seg].min_alloc
+        # Stash for the caller to print.
+        compare_one.last_data = (line, notes, warnings)  # type: ignore[attr-defined]
+    else:
+        compare_one.last_data = None  # type: ignore[attr-defined]
+    compare_one.last_cmp = cmp  # type: ignore[attr-defined]
+    compare_one.last_annotations = annotations  # type: ignore[attr-defined]
+    return results, annotations, orig, data_by_module, data_total, linked
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--orig", type=Path, default=ROOT / "orig" / "AARCADE.EXE",
-                    help="original NE file (default: orig/AARCADE.EXE)")
-    ap.add_argument("--rebuilt", type=Path, default=ROOT / "build" / "AARCADE.EXE",
-                    help="rebuilt NE file (default: build/AARCADE.EXE)")
-    ap.add_argument("--map", type=Path, default=ROOT / "build" / "AARCADE.MAP",
-                    help="TLINK map with publics (default: build/AARCADE.MAP)")
+    ap.add_argument("--orig", type=Path, default=None,
+                    help="original NE file (default: orig/<module>)")
+    ap.add_argument("--rebuilt", type=Path, default=None,
+                    help="rebuilt NE file (default: build/<module>)")
+    ap.add_argument("--map", type=Path, default=None,
+                    help="TLINK map with publics (default: build/<module>.MAP)")
     ap.add_argument("--src", type=Path, default=ROOT / "src",
                     help="directory of annotated sources (default: src/)")
     ap.add_argument("--module", default="AARCADE",
@@ -375,73 +521,91 @@ def main() -> int:
                     help="compare the original against itself using the annotations as a map")
     args = ap.parse_args()
 
-    everything = parse_tree(args.src, args.module)
-    annotations = [a for a in everything if a.kind in ("FUNCTION", "STUB", "LIBRARY")]
-    orig = NEFile(str(args.orig))
-    if args.selftest:
-        new = orig
-        publics = {f"FUN_{s.index:04X}_{off:04X}": (s.index, off)
-                   for s in orig.segments.values() if s.is_code
-                   for off, _, _ in function_extents(orig, s.index)}
-        exports = {(e.seg, e.offset): orig.entry_names[o]
-                   for o, e in orig.entries.items() if o in orig.entry_names}
-        annotated = {(a.seg, a.off) for a in everything}
-        publics = {k: v for k, v in publics.items() if v not in annotated and v not in exports}
-        publics.update({name: addr for addr, name in exports.items()})
-        for a in everything:
-            publics[a.symbol or linker_candidates(a.name)[0]] = (a.seg, a.off)
-    else:
-        if not args.rebuilt.exists() or not args.map.exists():
-            print(f"missing {args.rebuilt} or {args.map}; build first (or use --selftest)", file=sys.stderr)
-            return 2
-        new = NEFile(str(args.rebuilt))
-        publics = parse_map(args.map)
-        place_library_statics(everything, publics)
+    orig_path, rebuilt_path, map_path = module_paths(args.module, args.orig, args.rebuilt, args.map)
 
-    cmp = Comparator(orig, new, publics, everything)
-
-    if args.diff:
-        key = args.diff.upper()
-        hits = [a for a in annotations if a.name.upper() == key or a.addr() == key.zfill(9)]
-        if not hits:
-            print(f"no annotation matches {args.diff}", file=sys.stderr)
+    if args.diff or args.selftest or args.json or args.data or (
+            args.progress and str(args.progress) in ("", "-")):
+        # Single-module path used by --diff / --selftest / --data / --json.
+        try:
+            results, annotations, orig, data_by_module, data_total, linked = compare_one(
+                args.module, orig_path, rebuilt_path, map_path, args.src, args.selftest)
+        except FileNotFoundError as e:
+            print(e, file=sys.stderr)
             return 2
-        for a in hits:
-            r = cmp.compare(a)
-            print(f"{a.addr()} {a.name}: {r.status} {r.score:.1%}\n{cmp.diff(a)}")
+        cmp = compare_one.last_cmp  # type: ignore[attr-defined]
+
+        if args.diff:
+            key = args.diff.upper()
+            hits = [a for a in annotations if a.name.upper() == key or a.addr() == key.zfill(9)]
+            if not hits:
+                print(f"no annotation matches {args.diff}", file=sys.stderr)
+                return 2
+            for a in hits:
+                r = cmp.compare(a)
+                print(f"{a.addr()} {a.name}: {r.status} {r.score:.1%}\n{cmp.diff(a)}")
+            return 0
+
+        print(f"{'address':9}  {'function':32} {'orig':>5} {'new':>5} {'score':>7}  status")
+        for r in results:
+            print(f"{r.addr:9}  {r.name[:32]:32} {r.orig_size:5} {r.new_size:5} {r.score:7.1%}  {r.status}")
+            if args.verbose and r.status == "differs":
+                a = next(x for x in annotations if x.addr() == r.addr)
+                print(cmp.diff(a) + "\n")
+
+        code_bytes = sum(s.length for s in orig.segments.values() if s.is_code)
+        exact = [r for r in results if r.status in ("exact", "equivalent")]
+        matched = sum(r.orig_size for r in exact)
+        print(f"\n{len(exact)}/{len(results)} annotated functions match; "
+              f"{matched}/{code_bytes} code bytes ({matched / code_bytes:.2%}) of the original")
+        if compare_one.last_data:  # type: ignore[attr-defined]
+            line, notes, warnings = compare_one.last_data  # type: ignore[attr-defined]
+            print(line)
+            for w in warnings:
+                print(f"  warning: {w}")
+            if args.data:
+                print("\nunannotated data:\n" + "\n".join(notes) if notes else "\nunannotated data: (none)")
+        if args.json:
+            args.json.write_text(json.dumps([asdict(r) for r in results], indent=2))
         return 0
 
-    results = [cmp.compare(a) for a in sorted(annotations, key=lambda a: (a.seg, a.off))]
-    print(f"{'address':9}  {'function':32} {'orig':>5} {'new':>5} {'score':>7}  status")
-    for r in results:
-        print(f"{r.addr:9}  {r.name[:32]:32} {r.orig_size:5} {r.new_size:5} {r.score:7.1%}  {r.status}")
-        if args.verbose and r.status == "differs":
-            a = next(x for x in annotations if x.addr() == r.addr)
-            print(cmp.diff(a) + "\n")
+    # Full run: compare every module and write the combined inventory.
+    modules: dict[str, dict] = {}
+    for name, _, _ in MODULES:
+        o, r, m = module_paths(name,
+                               args.orig if name == args.module else None,
+                               args.rebuilt if name == args.module else None,
+                               args.map if name == args.module else None)
+        try:
+            results, annotations, orig, data_by_module, data_total, linked = compare_one(
+                name, o, r, m, args.src)
+        except FileNotFoundError as e:
+            print(e, file=sys.stderr)
+            return 2
+        cmp = compare_one.last_cmp  # type: ignore[attr-defined]
+        print(f"=== {name} ===")
+        print(f"{'address':9}  {'function':32} {'orig':>5} {'new':>5} {'score':>7}  status")
+        for res in results:
+            print(f"{res.addr:9}  {res.name[:32]:32} {res.orig_size:5} {res.new_size:5} "
+                  f"{res.score:7.1%}  {res.status}")
+            if args.verbose and res.status == "differs":
+                a = next(x for x in annotations if x.addr() == res.addr)
+                print(cmp.diff(a) + "\n")
+        code_bytes = sum(s.length for s in orig.segments.values() if s.is_code)
+        exact = [res for res in results if res.status in ("exact", "equivalent")]
+        matched = sum(res.orig_size for res in exact)
+        print(f"\n{len(exact)}/{len(results)} annotated functions match; "
+              f"{matched}/{code_bytes} code bytes ({matched / code_bytes:.2%}) of the original")
+        if compare_one.last_data:  # type: ignore[attr-defined]
+            line, notes, warnings = compare_one.last_data  # type: ignore[attr-defined]
+            print(line)
+            for w in warnings:
+                print(f"  warning: {w}")
+        modules[name] = module_inventory(
+            results, annotations, orig, data_by_module, data_total, linked)
+        print()
 
-    code_bytes = sum(s.length for s in orig.segments.values() if s.is_code)
-    exact = [r for r in results if r.status in ("exact", "equivalent")]
-    matched = sum(r.orig_size for r in exact)
-    print(f"\n{len(exact)}/{len(results)} annotated functions match; "
-          f"{matched}/{code_bytes} code bytes ({matched / code_bytes:.2%}) of the original")
-    listings = args.map.parent / "LST"
-    data_by_module: dict[str, dict[str, int]] | None = None
-    data_total: int | None = None
-    if not args.selftest and listings.is_dir():
-        items, warnings = layout(args.map, listings, new.auto_data_seg, publics)
-        line, notes, data_by_module = data_coverage(orig, new, items, everything, publics)
-        data_total = orig.segments[orig.auto_data_seg].min_alloc
-        print(line)
-        for w in warnings:
-            print(f"  warning: {w}")
-        if args.data:
-            print("\nunannotated data:\n" + "\n".join(notes))
-    if args.json:
-        args.json.write_text(json.dumps([asdict(r) for r in results], indent=2))
-    # Full comparison only: --diff returns earlier; --selftest has no rebuilt map.
-    if not args.selftest and args.progress and str(args.progress) not in ("", "-"):
-        linked = args.rebuilt.read_bytes() == args.orig.read_bytes()
-        write_progress(args.progress, results, annotations, orig, data_by_module, data_total, linked)
+    if args.progress and str(args.progress) not in ("", "-"):
+        write_progress(args.progress, modules)
         print(f"wrote {args.progress.relative_to(ROOT)}")
     return 0
 

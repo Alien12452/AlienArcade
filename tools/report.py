@@ -19,10 +19,13 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parent.parent
 REPORT_VERSION = 2
 LIBRARY_UNIT = "src/rtl.h"
+DLL_LIBRARY_UNIT = "src/datalib/rtl.h"
 CATEGORY_NAMES = {
     "game": "Game code",
     "library": "Runtime library",
+    "dlls": "Picture DLLs",
 }
+DLL_MODULES = frozenset({"AACOLOR", "AABW"})
 
 
 def _pct(part: float, whole: float) -> float:
@@ -118,27 +121,73 @@ def _virtual_address(addr: str) -> str:
     return str((seg << 16) | off)
 
 
-def _module_unit(module: str, units: dict[str, dict]) -> str:
+def _library_unit(module_name: str | None) -> str:
+    return DLL_LIBRARY_UNIT if module_name in DLL_MODULES else LIBRARY_UNIT
+
+
+def _unit_path(file_path: str, module_name: str | None) -> str:
+    """EXE units keep their src/ paths; DLL units are `MODULE/basename`."""
+    if module_name in DLL_MODULES:
+        base = PurePosixPath(file_path).name
+        return f"{module_name}/{base}"
+    return file_path
+
+
+def _module_unit(module: str, units: dict[str, dict], module_name: str | None) -> str:
     """Map a TLINK module stem to a source-path unit name."""
     stem = module.upper()
     for path in units:
-        if PurePosixPath(path).stem.upper() == stem:
+        base = PurePosixPath(path).stem.upper()
+        if base == stem:
             return path
-    return LIBRARY_UNIT
+    return _unit_path(_library_unit(module_name), module_name)
 
 
-def _gap_bytes(functions: list[dict], segments: dict[str, int]) -> dict[str, int]:
-    """Unannotated bytes per unit: each gap goes to the following function's
-    unit, or the previous one's when it sits at the end of a segment."""
+def _gap_owner(functions: list[dict], segments: dict[str, int],
+               addr: str, size: int, library_unit: str) -> str:
+    """Unit that owns an uncovered stretch: the following function, or the
+    previous one at the end of a segment."""
+    seg, off = _parse_addr(addr)
+    funcs = sorted(
+        (f for f in functions if f["segment"] == seg),
+        key=lambda f: _parse_addr(f["addr"])[1],
+    )
+    if not funcs:
+        return library_unit
+    for fn in funcs:
+        fn_off = _parse_addr(fn["addr"])[1]
+        if fn_off >= off + size:
+            return fn["file"]
+    return funcs[-1]["file"]
+
+
+def _gap_bytes(functions: list[dict], segments: dict[str, int],
+               gap_list: list[dict] | None,
+               library_unit: str = LIBRARY_UNIT) -> tuple[dict[str, int], int]:
+    """Unmatched non-padding gap bytes per unit, and the padding byte count.
+
+    When `gap_list` is present (from necmp), all-zero gaps are padding and are
+    left out of total_code. Older inventories without the list fall back to
+    counting every uncovered stretch as unmatched."""
+    gaps: dict[str, int] = defaultdict(int)
+    padding = 0
+    if gap_list is not None:
+        for g in gap_list:
+            size = int(g["size"])
+            if g.get("zero"):
+                padding += size
+                continue
+            gaps[_gap_owner(functions, segments, g["addr"], size, library_unit)] += size
+        return gaps, padding
+
     by_seg: dict[int, list[dict]] = defaultdict(list)
     for fn in functions:
         by_seg[fn["segment"]].append(fn)
-    gaps: dict[str, int] = defaultdict(int)
     for key, length in segments.items():
         seg = int(key, 16)
         funcs = sorted(by_seg.get(seg, []), key=lambda f: _parse_addr(f["addr"])[1])
         if not funcs:
-            gaps[LIBRARY_UNIT] += length
+            gaps[library_unit] += length
             continue
         prev_end = 0
         prev_file = funcs[0]["file"]
@@ -150,18 +199,31 @@ def _gap_bytes(functions: list[dict], segments: dict[str, int]) -> dict[str, int
             prev_file = fn["file"]
         if prev_end < length:
             gaps[prev_file] += length - prev_end
-    return gaps
+    return gaps, 0
 
 
-def build_report(inventory: dict) -> dict:
-    functions = inventory["functions"]
-    segments = inventory["segments"]
-    data = inventory.get("data") or {"total": 0, "modules": {}}
-    linked = bool(inventory.get("linked"))
+def _is_library_unit(path: str, lib_unit: str) -> bool:
+    return path == lib_unit or path == LIBRARY_UNIT or path.endswith("/" + DLL_LIBRARY_UNIT)
+
+
+def _collect_units(mod_inv: dict, module_name: str | None,
+                   linked: bool) -> tuple[list[dict], int, int]:
+    """Build report units for one binary module. Returns units, padding bytes,
+    and expected data total for self-checks."""
+    # Prefix DLL source paths so AACOLOR and AABW do not collide.
+    functions = [
+        {**fn, "file": _unit_path(fn["file"], module_name)}
+        for fn in mod_inv["functions"]
+    ]
+    segments = mod_inv["segments"]
+    data = mod_inv.get("data") or {"total": 0, "modules": {}}
+    gap_list = mod_inv.get("gaps")
+    lib_unit = _unit_path(_library_unit(module_name), module_name)
 
     units: dict[str, dict] = {}
     for fn in functions:
-        slot = units.setdefault(fn["file"], {
+        path = fn["file"]
+        slot = units.setdefault(path, {
             "functions": [],
             "library": True,
             "gap": 0,
@@ -172,23 +234,27 @@ def build_report(inventory: dict) -> dict:
         if not fn.get("library"):
             slot["library"] = False
 
-    for path, gap in _gap_bytes(functions, segments).items():
+    # Gap owners use un-prefixed paths from the inventory; re-prefix for DLLs.
+    raw_funcs = mod_inv["functions"]
+    gap_by_unit, padding = _gap_bytes(
+        raw_funcs, segments, gap_list, _library_unit(module_name))
+    for path, gap in gap_by_unit.items():
+        path = _unit_path(path, module_name)
         units.setdefault(path, {
             "functions": [],
-            "library": path == LIBRARY_UNIT,
+            "library": _is_library_unit(path, lib_unit),
             "gap": 0,
             "total_data": 0,
             "matched_data": 0,
         })
         units[path]["gap"] += gap
 
-    modules = data.get("modules") or {}
     accounted = 0
-    for mod, sizes in modules.items():
-        path = _module_unit(mod, units)
+    for mod, sizes in (data.get("modules") or {}).items():
+        path = _module_unit(mod, units, module_name)
         units.setdefault(path, {
             "functions": [],
-            "library": path == LIBRARY_UNIT,
+            "library": _is_library_unit(path, lib_unit),
             "gap": 0,
             "total_data": 0,
             "matched_data": 0,
@@ -198,22 +264,22 @@ def build_report(inventory: dict) -> dict:
         accounted += sizes["total"]
     remainder = max(0, int(data.get("total") or 0) - accounted)
     if remainder:
-        units.setdefault(LIBRARY_UNIT, {
+        print(
+            f"warning: {remainder} data bytes not claimed by any module item"
+            + (f" ({module_name})" if module_name else ""),
+            file=sys.stderr,
+        )
+        units.setdefault(lib_unit, {
             "functions": [],
             "library": True,
             "gap": 0,
             "total_data": 0,
             "matched_data": 0,
         })
-        units[LIBRARY_UNIT]["total_data"] += remainder
+        units[lib_unit]["total_data"] += remainder
 
     report_units = []
-    categories = {
-        "game": {"id": "game", "name": CATEGORY_NAMES["game"], "measures": _empty_measures()},
-        "library": {"id": "library", "name": CATEGORY_NAMES["library"], "measures": _empty_measures()},
-    }
-    total = _empty_measures()
-
+    module_code = 0
     for path in sorted(units):
         slot = units[path]
         fns = sorted(slot["functions"], key=lambda f: _parse_addr(f["addr"]))
@@ -221,15 +287,14 @@ def build_report(inventory: dict) -> dict:
         total_code = sum(f["orig_size"] for f in fns) + slot["gap"]
         matched_code = sum(f["orig_size"] for f in matched_fns)
         fuzzy_code = sum(f["orig_size"] * float(f["score"]) for f in fns)
-        total_data = slot["total_data"]
-        matched_data = slot["matched_data"]
-        # "Complete" is ByteMatch's fully linked: only once the whole EXE is
-        # identical (verify.py), never per unit from matched functions.
         complete = linked
         category = "library" if slot["library"] else "game"
+        cats = [category]
+        if module_name in DLL_MODULES:
+            cats.append("dlls")
         measures = _measures(
             total_code, matched_code, fuzzy_code,
-            total_data, matched_data,
+            slot["total_data"], slot["matched_data"],
             len(fns), len(matched_fns),
             complete,
         )
@@ -239,24 +304,77 @@ def build_report(inventory: dict) -> dict:
             "fuzzy_match_percent": 100.0 * float(f["score"]),
             "metadata": {"virtual_address": _virtual_address(f["addr"])},
         } for f in fns]
+        # DLL unit names are MODULE/basename; point source_path at the real file.
+        if module_name in DLL_MODULES:
+            source = DLL_LIBRARY_UNIT if path.endswith("/rtl.h") else "src/datalib/libmain.c"
+        else:
+            source = path
+        meta = {
+            "complete": complete,
+            "source_path": source,
+            "progress_categories": cats,
+        }
+        if module_name:
+            meta["module_name"] = module_name
         report_units.append({
             "name": path,
             "measures": measures,
             "functions": items,
-            "metadata": {
-                "complete": complete,
-                "source_path": path,
-                "progress_categories": [category],
-            },
+            "metadata": meta,
         })
-        _add_measures(total, measures)
-        _add_measures(categories[category]["measures"], measures)
+        module_code += total_code
 
-    # Self-check: unit sums vs top-level, code total vs segment lengths.
     seg_total = sum(int(v) for v in segments.values())
-    if int(total["total_code"]) != seg_total:
+    fn_bytes = sum(f["orig_size"] for f in functions)
+    other_gaps = sum(gap_by_unit.values())
+    label = module_name or "AARCADE"
+    if gap_list is not None:
+        if fn_bytes + padding + other_gaps != seg_total:
+            raise SystemExit(
+                f"{label}: functions {fn_bytes} + padding {padding} + gaps {other_gaps} "
+                f"!= segment lengths {seg_total}")
+        if module_code != fn_bytes + other_gaps:
+            raise SystemExit(
+                f"{label}: unit code {module_code} != functions {fn_bytes} "
+                f"+ non-zero gaps {other_gaps}")
+    elif module_code != seg_total:
         raise SystemExit(
-            f"total_code {total['total_code']} != sum of segment lengths {seg_total}")
+            f"{label}: unit code {module_code} != sum of segment lengths {seg_total}")
+    return report_units, padding, int(data.get("total") or 0)
+
+
+def build_report(inventory: dict) -> dict:
+    # New multi-module inventory, or a flat single-module one.
+    if "modules" in inventory:
+        mod_map = inventory["modules"]
+        linked = bool(inventory.get("linked"))
+    else:
+        mod_map = {"AARCADE": inventory}
+        linked = bool(inventory.get("linked"))
+
+    categories = {
+        "game": {"id": "game", "name": CATEGORY_NAMES["game"], "measures": _empty_measures()},
+        "library": {"id": "library", "name": CATEGORY_NAMES["library"], "measures": _empty_measures()},
+        "dlls": {"id": "dlls", "name": CATEGORY_NAMES["dlls"], "measures": _empty_measures()},
+    }
+    total = _empty_measures()
+    report_units: list[dict] = []
+    expected_data_sum = 0
+
+    for name in sorted(mod_map):
+        mod_inv = mod_map[name]
+        module_name = name if (name in DLL_MODULES or len(mod_map) > 1) else None
+        units, _padding, expected_data = _collect_units(mod_inv, module_name, linked)
+        expected_data_sum += expected_data
+        for u in units:
+            report_units.append(u)
+            _add_measures(total, u["measures"])
+            for cat in u["metadata"]["progress_categories"]:
+                if cat in categories:
+                    _add_measures(categories[cat]["measures"], u["measures"])
+
+    report_units.sort(key=lambda u: u["name"])
+
     unit_code = sum(int(u["measures"]["total_code"]) for u in report_units)
     unit_matched = sum(int(u["measures"]["matched_code"]) for u in report_units)
     unit_data = sum(int(u["measures"]["total_data"]) for u in report_units)
@@ -265,16 +383,18 @@ def build_report(inventory: dict) -> dict:
         raise SystemExit("unit code measures do not sum to the top-level totals")
     if unit_data != int(total["total_data"]) or unit_mdata != int(total["matched_data"]):
         raise SystemExit("unit data measures do not sum to the top-level totals")
-    expected_data = int(data.get("total") or 0)
-    if expected_data and int(total["total_data"]) != expected_data:
+    if expected_data_sum and int(total["total_data"]) != expected_data_sum:
         raise SystemExit(
-            f"total_data {total['total_data']} != inventory data.total {expected_data}")
+            f"total_data {total['total_data']} != inventory data.total {expected_data_sum}")
 
+    cats = [categories["game"], categories["library"]]
+    if int(categories["dlls"]["measures"]["total_code"]) or int(categories["dlls"]["measures"]["total_data"]):
+        cats.append(categories["dlls"])
     return {
         "measures": total,
         "units": report_units,
         "version": REPORT_VERSION,
-        "categories": [categories["game"], categories["library"]],
+        "categories": cats,
     }
 
 

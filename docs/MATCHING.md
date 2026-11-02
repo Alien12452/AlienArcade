@@ -677,3 +677,16 @@ NE image matches. `AABW.DLL` has no overlay.
 
 `tools/verify.py --dlls` requires both DLL hashes (and the EXE) to match
 `orig/SHA256SUMS`. `METER.DLL` remains out of scope.
+
+Both DLLs are annotated (`src/datalib/libmain.c`, `src/datalib/rtl.h`) and
+included in `docs/progress.json` under `modules`, next to `AARCADE`.
+
+## Progress inventory
+
+`necmp.py` writes `docs/progress.json` for ByteMatch via `tools/report.py`.
+The file has a top-level `linked` flag (all modules byte-identical) and a
+`modules` map keyed by `AARCADE` / `AACOLOR` / `AABW`. Each module records
+`functions`, code `segments`, `gaps` (uncovered stretches with a `zero` flag
+for linker alignment padding), and `data` coverage. Report totals exclude
+all-zero gaps from `total_code`; identical string-literal pools and
+inter-contribution data padding count as matched data.

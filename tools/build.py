@@ -85,7 +85,9 @@ def dos(path: Path) -> str:
 
 def defined_symbols() -> set[str]:
     names = set()
-    for a in parse_tree(SRC):
+    # Only the EXE module: DLL FUNCTION annotations live under src/datalib/
+    # and must not suppress EXE stubs or change the EXE link set.
+    for a in parse_tree(SRC, "AARCADE"):
         if a.kind == "FUNCTION":
             names.add((a.symbol or a.name).upper())
     return names
@@ -300,7 +302,9 @@ def link_sources() -> list[Path]:
     objects so it does not shift the prefix that already matches.
     """
     seg: dict[Path, int] = {}
-    for a in parse_tree(SRC):
+    # AARCADE only: FUNCTION annotations on src/datalib/libmain.c are for the
+    # picture DLLs and must not pull that file into the EXE link.
+    for a in parse_tree(SRC, "AARCADE"):
         if a.kind != "FUNCTION" or a.file.name.lower() == "mmstub.asm":
             continue
         seg[a.file] = min(a.seg, seg.get(a.file, a.seg))
